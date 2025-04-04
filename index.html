@@ -3,57 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Criptografia por Permutação (Transposição)</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<style>
-    body {
-        background-image: linear-gradient(135deg, #a1a98d 0%, #f7d2c4 100%);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        width: 90%;
-        height: 80vh;
-        background-color: rgb(60, 24, 95);
-        border-radius: 10px;
-        color: aliceblue;
-    }
-
-    input, select, textarea, button {
-        padding: 8px;
-        font-size: 16px;
-        border-radius: 10px;
-    }
-
-    button {
-        background-color: beige;
-    }
-
-    button:hover {
-
-    }
-
-    .result {
-
-    }
-
-</style>
 <body>
     <div class="container">
-        <h1>Criptografia por Permuta</h1>
+        <h1>Criptografia por Permutação</h1>
+        <label for="message">Mensagem <em>(max. 200 caracteres): </em></label>
+        <textarea id="message" maxlength="200" rows="4" required></textarea>
 
-        <label for="message">Mensagem <em>(max. 100 caracteres): </em></label>
-        <textarea id="message" maxlength="100" rows="4" required></textarea>
-
-        <label for="key">Digite a chave: </label>
-        <textarea id="key" required></textarea>
+        <label for="key">Chave <em>(digite uma palavra): </em></label>
+        <input type="text" id="key" required placeholder="Ex: segredo">
 
         <label for="action">Ação</label>
         <select id="action">
@@ -61,9 +21,10 @@
             <option value="decrypt">Descriptografar</option>
         </select>
 
-        <button onclick="processMessage()">Processar</button>
-
-
+        <button class="button" id="processBtn">Processar</button>
+        <div class="result" id="result">Resultado aparecerá aqui...</div>
     </div>
+
+    <script src="js/permuta.js"></script>
 </body>
 </html>
